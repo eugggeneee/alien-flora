@@ -5,10 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Alien Flora | Atlas of invasive plants in Minsk</title>
 <meta name="description" content="An illustrated atlas of 35 invasive and expansive plants around Minsk: how to recognise them, what harm they do and how to remove them safely.">
-<meta name="theme-color" content="#F5F5F0">
+<meta name="theme-color" content="#F7F3E3">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Newsreader:wght@400&family=Vollkorn:wght@600&display=swap">
 <link rel="stylesheet" href="style.css">
 <script>
+  document.documentElement.classList.add('js');
   (function () {
     try {
       var t = localStorage.getItem('af-theme');
@@ -82,17 +86,18 @@
 
   <!-- HOME -->
   <section class="page" data-page="home" hidden>
-    <div class="wrap hero" data-enter>
-      <div class="hero__text">
-        <p class="eyebrow">Field atlas, Minsk</p>
+    <div class="wrap hero hero--plates" data-enter>
+      <div class="hero__top">
         <h1 tabindex="-1">Atlas of invasive plants in Minsk</h1>
-        <p class="lead">35 species with illustrated field notes: how to recognise each plant, what harm it does and how to deal with it safely.</p>
-        <div class="row">
-          <a class="btn btn--primary" href="#/catalog">Browse the catalog <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-          <a class="btn btn--ghost" href="#/identify">Identify a plant</a>
+        <div class="hero__side">
+          <p class="lead">35 species with illustrated field notes: how to recognise each plant, what harm it does and how to deal with it safely.</p>
+          <div class="row">
+            <a class="btn btn--primary" href="#/catalog">Browse the catalog <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+            <a class="btn btn--ghost" href="#/identify">Identify a plant</a>
+          </div>
         </div>
       </div>
-      <div class="hero__art" id="heroArt" aria-hidden="true"></div>
+      <ol class="plates" id="heroPlates" aria-label="Featured species"></ol>
     </div>
 
     <div class="wrap">
@@ -213,7 +218,7 @@
         <ol class="timeline">
           <li><h3>Identify it</h3><p>Confirm the species with the identifier or the catalog. Control methods differ a lot between species.</p></li>
           <li><h3>Protect yourself</h3><p>Wear long sleeves, gloves and eye protection. For hogweed use a full protective suit, cover your face and work on a cloudy day or in the evening.</p></li>
-          <li><h3>Remove it</h3><p>Choose a method from the plant's page: digging out, mowing or cutting, a competing sown cover, or a herbicide used strictly as the label says.</p></li>
+          <li><h3>Remove it</h3><p>Choose a method from the plant’s page: digging out, mowing or cutting, a competing sown cover, or a herbicide used strictly as the label says.</p></li>
           <li><h3>Dispose of it</h3><p>Do not compost seed heads, roots or rhizomes. Bag them or dry them completely, and check local waste rules before burning anything.</p></li>
           <li><h3>Check back</h3><p>Look over the area every few weeks in the growing season. Seed banks in the soil can keep producing seedlings for several years.</p></li>
         </ol>
@@ -228,7 +233,7 @@
         <h2>Finding a plant in an apartment courtyard</h2>
         <div class="cols">
           <article class="card-plain"><svg class="i" aria-hidden="true"><use href="#i-home"/></svg><h3>Housing office</h3><p>Start with your housing maintenance office or building management company. They look after the land around the building.</p></article>
-          <article class="card-plain"><svg class="i" aria-hidden="true"><use href="#i-leaf"/></svg><h3>City greening service</h3><p>The organisation that maintains city green spaces. Look for a request form on the city's official website.</p></article>
+          <article class="card-plain"><svg class="i" aria-hidden="true"><use href="#i-leaf"/></svg><h3>City greening service</h3><p>The organisation that maintains city green spaces. Look for a request form on the city’s official website.</p></article>
           <article class="card-plain"><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg><h3>Environmental inspectorate</h3><p>The regulator for environmental protection. Contact your district office if the first two do not respond.</p></article>
         </div>
         <h3 class="h3">What to put in your report</h3>
@@ -247,7 +252,7 @@
         <ol class="plain-list">
           <li>Photograph the plant and include landmarks so someone can find the spot.</li>
           <li>Identify the species with the identifier.</li>
-          <li>Tell the park or reserve administration. Their contact details are on the city's official website.</li>
+          <li>Tell the park or reserve administration. Their contact details are on the city’s official website.</li>
           <li>Send the coordinates. Most phones can show them in the map app.</li>
         </ol>
       </div>

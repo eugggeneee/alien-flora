@@ -24,3 +24,7 @@ Copy one entry in `data.js` and change its fields. Use a short lowercase id with
 ## Notes
 
 The site makes no network requests. The species notes are an educational reference, so check official lists and local rules before you remove anything.
+
+## Design
+
+The interface uses the Garden look: warm oat paper, deep green ink, Vollkorn headings with old-style numerals over Hanken Grotesk, one leaf-green accent, unboxed cards with hairlines, and a green-ink footer. A dark theme is built in. Fonts load from Google Fonts and fall back to system serif and sans.
