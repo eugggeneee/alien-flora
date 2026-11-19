@@ -170,6 +170,14 @@
       at('sosnowskys-hogweed', 105, 2.2) + at('box-elder', 262, 2.1) + at('false-indigo', 392, 1.7) + '</svg>';
   }
 
+  function heroPlates() {
+    var list = ['sosnowskys-hogweed', 'box-elder', 'american-pokeweed', 'false-indigo', 'giant-knotweed'].map(find).filter(Boolean);
+    PLANTS.forEach(function (p) { if (list.length < 5 && list.indexOf(p) < 0 && (p.danger === 'critical' || p.danger === 'dangerous')) list.push(p); });
+    return list.slice(0, 5).map(function (p, i) {
+      return '<li class="plate" style="--i:' + i + '"><a href="#/plant/' + esc(p.id) + '"><span class="plate__no">0' + (i + 1) + '</span><div class="plate__art">' + plantArt(p) + '</div><span class="plate__name">' + esc(p.name) + '</span><span class="latin">' + esc(p.latin) + '</span></a></li>';
+    }).join('');
+  }
+
   /* ---------- cards ---------- */
   function card(p, extra) {
     return '<a class="card" href="#/plant/' + esc(p.id) + '"><div class="card__art">' + plantArt(p) + '</div><div class="card__body">' +
@@ -180,7 +188,7 @@
 
   /* ---------- home ---------- */
   function renderHome() {
-    $('#heroArt').innerHTML = heroArt();
+    $('#heroPlates').innerHTML = heroPlates();
     var high = PLANTS.filter(function (p) { return p.danger === 'critical' || p.danger === 'dangerous'; }).length;
     var forms = {}; PLANTS.forEach(function (p) { forms[p.type] = 1; });
     $('#facts').innerHTML = [[PLANTS.length, 'species in the atlas'], [high, 'rated critical or dangerous'], [Object.keys(forms).length, 'plant forms: trees, shrubs, herbs and vines']]
@@ -394,7 +402,7 @@
     tb.addEventListener('click', function () {
       var t = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       root.setAttribute('data-theme', t); try { localStorage.setItem('af-theme', t); } catch (e) {} label();
-      var m = $('meta[name="theme-color"]'); if (m) m.setAttribute('content', t === 'dark' ? '#0D1411' : '#F5F5F0');
+      var m = $('meta[name="theme-color"]'); if (m) m.setAttribute('content', t === 'dark' ? '#10241A' : '#F7F3E3');
     });
     $('#burger').addEventListener('click', function () {
       var open = !$('#navLinks').classList.contains('is-open');
